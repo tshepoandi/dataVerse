@@ -9,7 +9,8 @@
         "dev": "concurrently \"npm run server\" \"npm run client\" ",
         "start": "nodemon backend/src/server.js",
         "server": "nodemon backend/src/server.js",
-        "client": "npm run dev --prefix readExcelFiles"
+        "client": "npm run dev --prefix readExcelFiles",
+        "build": "npm i && npm i --prefix readExcelFiles && npm run build --prefix readExcelFiles"
     },
     "keywords": [],
     "author": "",
