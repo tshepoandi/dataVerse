@@ -1,10 +1,11 @@
 import express from 'express';
 import cors from 'cors';
 import dotenv from 'dotenv';
-// import { connectToDatabase } from './service/mongodb.js'
+import connectToDatabase from '../databaseConfiguration/database.js';
 import promptRoutes from '../routes/promptRoutes.js'
-dotenv.config();
 
+dotenv.config();
+connectToDatabase();
 
 
 const app = express();
