@@ -14,8 +14,8 @@ export const getUserById = asyncHandler(async(id) => {
     return user;
 })
 
-export const registerUser = asyncHandler(async(user) => {
-    const { name, email, body } = req.body;
+export const registerUser = asyncHandler(async(req, res) => {
+    const { name, email, password } = req.body;
     const userExists = await User.findOne({ email });
     if (userExists) {
         res.status(400);
@@ -24,7 +24,7 @@ export const registerUser = asyncHandler(async(user) => {
     const user = await User.create({
         name,
         email,
-        body
+        password
     });
     if (user) {
         generateToken(res, user._id)
@@ -46,7 +46,7 @@ export const authUser = asyncHandler(async(req, res) => {
     const user = await User.findOne({ email, password })
     console.log(user)
     if (user) {
-        generateToken(res, user._id)
+        // generateToken(res, user._id)
         res.json({
             _id: user._id,
             name: user.name,

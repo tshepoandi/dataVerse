@@ -19,7 +19,7 @@ export const userSchema = new mongoose.Schema({
         required: true,
         default: false
     },
-    timestamps: true
+
 })
 
 
