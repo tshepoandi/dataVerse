@@ -1,5 +1,5 @@
-import Analysis from "../models/analysisModel";
-import asyncHandler from "../middleware/asyncHandler"
+import Analysis from "../models/analysisModel.js";
+import asyncHandler from "../middleware/asyncHandler.js"
 
 export const getAllAnalytics = asyncHandler(async(req, res) => {
     const analysis = await Analysis.find({ userId: req.user._id });

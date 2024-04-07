@@ -1,6 +1,6 @@
 import express from 'express'
 const router = express.Router()
-import { createAnalytics, getAllAnalytics, getAnalyticsById } from '../controllers/analysisController'
+import { createAnalytics, getAllAnalytics, getAnalyticsById } from '../controllers/analysisController.js'
 
 router.route('/save-analysis').post(createAnalytics)
 router.route('/analytics').get(getAllAnalytics)
