@@ -19,7 +19,7 @@ export const createAnalytics = asyncHandler(async(req, res) => {
     const { analyticsName, analyticsDescription, analyticsData } = req.body;
 
     try {
-        const analytics = await Analytics.create({
+        const analytics = await Analysis.create({
             analyticsName,
             analyticsDescription,
             analyticsData
