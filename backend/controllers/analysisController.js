@@ -7,7 +7,7 @@ import asyncHandler from "../middleware/asyncHandler.js"
 // })
 
 export const getAllAnalytics = asyncHandler(async(req, res) => {
-    const analysis = await Analysis.find({});
+    const analysis = await Analysis.find({ userId: req.params.id });
     res.status(200).json({ message: analysis });
 })
 export const getAnalyticsById = asyncHandler(async(req, res) => {
