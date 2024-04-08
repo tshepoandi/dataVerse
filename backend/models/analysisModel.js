@@ -3,6 +3,7 @@ import mongoose from "mongoose";
 const analysisSchema = mongoose.Schema({
     analysisName: { type: String, required: true },
     analysisDescription: { type: String, required: true },
+    analysisData: { type: String, required: true },
     userId: { type: mongoose.Schema.Types.ObjectId, ref: 'User' }
 })
 

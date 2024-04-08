@@ -22,6 +22,7 @@ app.get("/", (req, res) => {
 app.use('/api', promptRoutes);
 app.use('/api/users', userRoute)
 app.use('/api/analysis', analysisRoute)
+
 app.listen(port, () => {
     console.log(`listening at http://localhost:${port}`);
 });
