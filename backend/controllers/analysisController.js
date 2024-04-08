@@ -7,7 +7,7 @@ export const getAllAnalytics = asyncHandler(async(req, res) => {
 })
 
 export const getAnalyticsById = asyncHandler(async(req, res) => {
-    const analytics = await Analytics.find({ _id: req.params.id, userId: req.user._id });
+    const analytics = await Analysis.find({ _id: req.params.id, userId: req.user._id });
     if (!analytics) {
         res.status(404);
         throw new Error("Analytics not found");
@@ -16,15 +16,15 @@ export const getAnalyticsById = asyncHandler(async(req, res) => {
 })
 
 export const createAnalytics = asyncHandler(async(req, res) => {
-    const { analyticsName, analyticsDescription, analyticsData } = req.body;
+    const { analysisName, analysisDescription, analysisData } = req.body;
 
     try {
-        const analytics = await Analysis.create({
-            analyticsName,
-            analyticsDescription,
-            analyticsData
+        const analysis = await Analysis.create({
+            analysisName,
+            analysisDescription,
+            analysisData
         })
-        res.status(201).json(analytics)
+        res.status(201).json(analysis)
     } catch (error) {
         res.status(400).json({ error: error.message })
     }
