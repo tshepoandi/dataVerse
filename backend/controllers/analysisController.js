@@ -22,7 +22,7 @@ export const createAnalytics = asyncHandler(async(req, res) => {
         const analysis = await Analysis.create({
             analysisName,
             analysisDescription,
-            analysisData
+            analysisData,
         })
         res.status(201).json(analysis)
     } catch (error) {
